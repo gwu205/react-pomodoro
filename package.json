@@ -24,9 +24,10 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
+    "pretty-ms": "^5.0.0",
     "react": "16.2",
     "react-dom": "16.2"
   },
