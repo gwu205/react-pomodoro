@@ -5,9 +5,25 @@ class Timer extends Component {
         super(props);
     }
 
+    startTimer = () => {
+        console.log('start');
+    }
+
+    stopTimer = () => {
+        console.log("stop");
+    }
+
+    resetTimer = () => {
+        console.log("reset");
+    }
+
     render() {
         return (
-            <h1>Timer</h1>
+            <div>
+                <button onClick={this.startTimer}>start</button>
+                <button onClick={this.stopTimer}>stop</button>
+                <button onClick={this.resetTimer}>reset</button>
+            </div>
         )
     }
 }
