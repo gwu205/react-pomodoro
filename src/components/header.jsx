@@ -34,9 +34,9 @@ class Header extends Component {
 
     render() {
         return (
-            <div>
+            <div className="header">
                 <h2>{this.getDate()}</h2>
-                <h1>{this.getTime()}</h1>
+                <h2>{this.getTime()}</h2>
             </div>
         )
     }
