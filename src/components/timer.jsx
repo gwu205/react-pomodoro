@@ -6,8 +6,8 @@ class Timer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: 2000,
-            start: 2000,
+            time: 25 * 60000,
+            start: 25 * 60000,
             isOn: false,
             counter: 0
         }
@@ -45,11 +45,12 @@ class Timer extends Component {
     render() {
         let start = (this.state.time == this.state.start) ? <button onClick={this.startTimer}>start</button> : null;
         let stop = (this.state.isOn) ? <button onClick={this.stopTimer}>stop</button> : null;
-        let reset = (this.state.time == 0 && !this.state.isOn) ? <button onClick={this.resetTimer}>reset</button> : null;
+        let reset = (!this.state.isOn) ? <button onClick={this.resetTimer}>reset</button> : null;
         let resume = (this.state.time != 0 && !this.state.isOn && this.state.time != this.state.start) ? <button onClick={this.startTimer}>resume</button> : null;
+        let format = `${(millisec(this.state.time).getMinutes() < 10) ? "0mm" : "mm"} : ${(millisec(this.state.time).getSeconds() < 10) ? "0ss" : "ss"}`
         return (
             <div>
-                <h1>{millisec(this.state.time).format('mm : ss')}</h1>
+                <h1>{millisec(this.state.time).format(format)}</h1>
                 {start}
                 {resume}
                 {stop}
