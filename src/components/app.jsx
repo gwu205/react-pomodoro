@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header';
-import Timer from './timer';
+import Counter from './counter';
 
 class App extends Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class App extends Component {
         return (
             <div className="container">
                 <Header />
-                <Timer />
+                <Counter />
             </div>
         )
     }

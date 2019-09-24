@@ -6,10 +6,10 @@ class Timer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: 25 * 60000,
-            start: 25 * 60000,
+            time: 2000,
+            start: 2000,
             isOn: false,
-            counter: 0
+            count: 0
         }
     }
 
@@ -21,7 +21,7 @@ class Timer extends Component {
             isOn: true
         })
         this.timer = 
-            setInterval(() => (this.state.time != 0) ? 
+            setInterval(() => (this.state.time > 0) ? 
             this.setState({ time: this.state.time - 1000}) : this.stopTimer(), 1000)
     }
 
@@ -37,10 +37,6 @@ class Timer extends Component {
             time: this.state.start
         })
     }
-
-    // count = () => {
-    //     if (this.state.time == 0)
-    // }
 
     render() {
         let start = (this.state.time == this.state.start) ? <button onClick={this.startTimer}>start</button> : null;
